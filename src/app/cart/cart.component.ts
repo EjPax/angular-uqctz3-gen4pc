@@ -9,12 +9,10 @@ import { ProductInterface } from '../products';
 })
 export class CartComponent implements OnInit {
 
-  items: ProductInterface[] = [];
+  items: ProductInterface[] = this.cartService.getItems();;
 
   constructor(private cartService: CartService) { }
 
-  ngOnInit(): void {
-    this.items = this.cartService.getItems();
-  }
+  ngOnInit(): void { }
 
 }
